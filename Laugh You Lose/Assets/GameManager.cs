@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject[] gameObjects;
+    public static GameManager Instance;
     public float speed;
-    // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
-        
+        Instance = this;
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+
+    }
+    
     void Update()
     {
-        foreach(GameObject gameObject in gameObjects)
-        {
-            gameObject.GetComponent<Rigidbody2D>().velocityX = -speed;
-        }
+
     }
 }

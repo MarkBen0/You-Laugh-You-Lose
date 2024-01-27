@@ -8,7 +8,7 @@ public class Scroll : MonoBehaviour
     private BoxCollider2D boxCollider;
     private Rigidbody2D rb;
     private float width;
-    [SerializeField] private float speed;
+    //private float speed = GameManager.Instance.speed;
     // Use this for initialization
     void Start()
     {
@@ -24,6 +24,7 @@ public class Scroll : MonoBehaviour
         {
             Reposition();
         }
+        rb.velocityX = -GameManager.Instance.speed;
     }
 
     private void Reposition()
