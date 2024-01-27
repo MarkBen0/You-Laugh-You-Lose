@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    Ray2D ray;
-    Rigidbody2D rb;
+    private Ray2D ray;
+    private Rigidbody2D rb;
     public float m_Thrust = 20f;
     public float JumpRay = 100f;
     public LayerMask floorLayer;
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         ray = new Ray2D(transform.position, -transform.up);
         
