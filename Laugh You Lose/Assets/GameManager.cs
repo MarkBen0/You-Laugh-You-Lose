@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -14,21 +15,30 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float ToSpeed;
     [SerializeField] private float TopSpeed;
     [SerializeField] private float SpeedPower;
-    [SerializeField] private GameObject StartButton;
+
     [SerializeField] private GameObject RestartButton;
-    [SerializeField] private GameObject Image;
+    [SerializeField] private GameObject RestartImage;
 
     void Awake()
     {
         Instance = this;
     }
 
-    public void GameStart()
+    public void Start()
     {
-        Time.timeScale = 1;
         StartCoroutine(ScoreCoroutine());
-        StartButton.active = false;
-        Image.active = false;
+    }
+    public void GameEnd()
+    {
+        Time.timeScale = 0;
+        StopCoroutine(ScoreCoroutine());
+        RestartButton.active = true;
+        RestartImage.active = true;
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void FixedUpdate()
