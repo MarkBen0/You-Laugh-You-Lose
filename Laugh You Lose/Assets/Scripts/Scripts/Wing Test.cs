@@ -5,11 +5,15 @@ using TMPro;
 
 public class WingTest : MonoBehaviour
 {
+    public AudioClip contactSound; // Assign your sound clip in the Inspector
+    private AudioSource audioSource;
     public TextMeshProUGUI totalScoreText;
     // Start is called before the first frame update
     void Start()
     {
         ScoreManager.Initialize(totalScoreText);
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = contactSound;
     }
 
     // Update is called once per frame
@@ -44,11 +48,19 @@ public class WingTest : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            PlayContactSound();
             Collect();
             Debug.Log("collected");
         }
     }
 
+    void PlayContactSound()
+    {
+        if (audioSource != null && contactSound != null)
+        {
+            audioSource.PlayOneShot(contactSound);
+        }
+    }
     void Collect()
     {
         Renderer renderer = GetComponent<Renderer>();

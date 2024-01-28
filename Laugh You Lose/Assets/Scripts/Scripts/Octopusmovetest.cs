@@ -5,14 +5,18 @@ using TMPro;
 
 public class Octopusmovetest : MonoBehaviour
 {
+    public AudioClip contactSound; // Assign your sound clip in the Inspector
+    private AudioSource audioSource;
     public float movementSpeed = 100f;
-    public int scoreValue = -10;
+    public int scoreValue = -30;
     public TextMeshProUGUI totalScoreText;
 
     void Start()
     {
         // Invoke the MoveTurtle method every 2 seconds, starting after 2 seconds
         ScoreManager.Initialize(totalScoreText);
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = contactSound;
         InvokeRepeating("MoveOctopus", 2f,2f);
     }
     public TextMeshProUGUI scoreText;
@@ -27,8 +31,16 @@ public class Octopusmovetest : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            PlayContactSound();
             Collect();
             Debug.Log("collected");
+        }
+    }
+    void PlayContactSound()
+    {
+        if (audioSource != null && contactSound != null)
+        {
+            audioSource.PlayOneShot(contactSound);
         }
     }
 
@@ -47,7 +59,7 @@ public class Octopusmovetest : MonoBehaviour
 
             // If you want to disable the entire GameObject after a delay, you can use Invoke
             Invoke("DeactivateGameObject", 1f);
-            ScoreManager.AddScore(-10);
+            ScoreManager.AddScore(-30);
         }
     }
 
