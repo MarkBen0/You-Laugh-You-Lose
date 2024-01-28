@@ -8,7 +8,7 @@ public class Testing : MonoBehaviour
     public int scoreValue = -10;
     public TextMeshProUGUI totalScoreText;
     public float movementSpeed = 2f;
-    public float tripDuration = 2f; // Adjust the duration of the trip
+    public float tripDuration = 4f; // Adjust the duration of the trip
     public AudioClip contactSound; // Assign your sound clip in the Inspector
 
     private AudioSource audioSource;
