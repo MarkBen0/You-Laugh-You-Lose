@@ -2193,6 +2193,10 @@ PrefabInstance:
       value: Triangle
       objectReference: {fileID: 0}
     - target: {fileID: 3054355551150387516, guid: 8b50eae68c86bfd4b9a46164eaad106e, type: 3}
+      propertyPath: scoreValue
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3054355551150387516, guid: 8b50eae68c86bfd4b9a46164eaad106e, type: 3}
       propertyPath: totalScoreText
       value: 
       objectReference: {fileID: 868503207}
