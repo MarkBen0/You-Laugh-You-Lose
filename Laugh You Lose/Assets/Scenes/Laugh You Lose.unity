@@ -1394,6 +1394,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2114006628}
     - target: {fileID: 766406552787364350, guid: 00ae97b376703ad4b9ecc0a2a510d720, type: 3}
+      propertyPath: contactSound
+      value: 
+      objectReference: {fileID: 8300000, guid: dbf81a24246ce4855a40e5f1d3449e30, type: 3}
+    - target: {fileID: 766406552787364350, guid: 00ae97b376703ad4b9ecc0a2a510d720, type: 3}
       propertyPath: totalScoreText
       value: 
       objectReference: {fileID: 868503207}
@@ -1592,6 +1596,10 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 868503207}
+    - target: {fileID: 2472392644760697230, guid: bd1eb6c488af28042b37e8407f972437, type: 3}
+      propertyPath: contactSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ee292188541d0435a8caa7596694743a, type: 3}
     - target: {fileID: 2472392644760697230, guid: bd1eb6c488af28042b37e8407f972437, type: 3}
       propertyPath: totalScoreText
       value: 
