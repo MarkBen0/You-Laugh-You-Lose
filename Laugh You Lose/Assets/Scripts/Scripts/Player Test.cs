@@ -2,37 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class PlayerTest : MonoBehaviour
+public class Player : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float jumpForce = 1f;
+    private Rigidbody2D rb;
     private AudioSource audioSource;
     private bool isMoving = false;
-    // Start is called before the first frame update
     private bool isTripping = false;
-    public float tripDuration = 1f;
+    public float moveSpeed = 5f;
+    public float jumpForce = 1f;
+    public float tripDuration = 4f;
     public float tripRotationSpeed = 360f;
+
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         // Move sideways
         float horizontalInput = Input.GetAxis("Horizontal");
         Vector3 movement = new Vector3(horizontalInput, 0f, 0f) * moveSpeed * Time.deltaTime;
         transform.Translate(movement);
+
         bool newIsMoving = Mathf.Abs(horizontalInput) > 0.1f;
-        // Jump
         UpdateFootstepSound(newIsMoving);
 
         isMoving = newIsMoving;
+
+        // Jump
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
+        }
+
+        // Check for obstacles and start tripping
+        if (CheckForObstacle() && !isTripping)
+        {
+            StartCoroutine(Trip());
         }
     }
 
@@ -56,6 +64,7 @@ public class PlayerTest : MonoBehaviour
             audioSource.Play();
         }
     }
+
     void StopFootstepSound()
     {
         // Stop the footstep sound
@@ -65,24 +74,16 @@ public class PlayerTest : MonoBehaviour
     void Jump()
     {
         // Perform a simple jump by adding force in the upward direction
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        }
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
-    void OnTriggerEnter2D(Collider2D other)
+
+    bool CheckForObstacle()
     {
-        if (other.CompareTag("Water"))
-        {
-            Debug.Log("-10");
-        }
-        if (other.CompareTag("Obstacle") && !isTripping)
-        {
-            // Start the tripping coroutine
-            StartCoroutine(Trip());
-        }
+        // Raycast down to check for obstacles
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.1f);
+        return hit.collider != null && hit.collider.CompareTag("Obstacle");
     }
+
     IEnumerator Trip()
     {
         isTripping = true;
@@ -107,4 +108,3 @@ public class PlayerTest : MonoBehaviour
         isTripping = false;
     }
 }
-
