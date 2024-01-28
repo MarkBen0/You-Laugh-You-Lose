@@ -5,12 +5,17 @@ using TMPro;
 
 public class ComicBook : MonoBehaviour
 {
+    public AudioClip contactSound; // Assign your sound clip in the Inspector
+    private AudioSource audioSource;
     public int scoreValue = 10;
     public TextMeshProUGUI totalScoreText;
     public float movementSpeed = 2f;
     private void Start()
     {
+
         ScoreManager.Initialize(totalScoreText);
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = contactSound;
     }
     public TextMeshProUGUI scoreText;
     private int score = 0;
@@ -26,8 +31,17 @@ public class ComicBook : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            PlayContactSound();
             Collect();
             Debug.Log("collected");
+        }
+    }
+
+    void PlayContactSound()
+    {
+        if (audioSource != null && contactSound != null)
+        {
+            audioSource.PlayOneShot(contactSound);
         }
     }
 
