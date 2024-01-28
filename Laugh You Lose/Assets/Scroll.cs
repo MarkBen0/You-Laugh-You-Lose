@@ -15,7 +15,7 @@ public class Scroll : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
 
-        width = boxCollider.size.x * transform.localScale.x;
+        width = boxCollider.size.x * 3;
     }
     // Update is called once per frame
     void Update()

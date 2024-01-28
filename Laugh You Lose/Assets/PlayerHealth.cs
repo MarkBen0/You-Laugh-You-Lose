@@ -7,20 +7,32 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI HealthDisplay;
 
-    [SerializeField] private int health = 3;
+    [SerializeField] private int hearts = 3;
 
     private void Start()
     {
-        AddHealth();
+        AddHealth(0);
     }
 
-    private void AddHealth()
+    private void AddHealth(int health)
     {
-        string hearts = "";
-        for (int i = 0; i < health; i++)
+        hearts += health;
+        string heartsString = "";
+        for (int i = 0; i < hearts; i++)
         {
-            hearts += "♥ ";
+            heartsString += "♥ ";
         }
-        HealthDisplay.text = hearts;
+        HealthDisplay.text = heartsString;
+        if(hearts <= 0)
+        {
+            GameManager.Instance.GameEnd();
+        }
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Bad"))
+        {
+            AddHealth(-1);
+        }
     }
 }
