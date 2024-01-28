@@ -34,5 +34,9 @@ public class PlayerHealth : MonoBehaviour
         {
             AddHealth(-1);
         }
+        if (other.CompareTag("Good"))
+        {
+            AddHealth(1);
+        }
     }
 }

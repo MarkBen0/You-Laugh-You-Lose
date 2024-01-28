@@ -8,12 +8,16 @@ public class WingTest : MonoBehaviour
     public AudioClip contactSound; // Assign your sound clip in the Inspector
     private AudioSource audioSource;
     public TextMeshProUGUI totalScoreText;
+    private Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
         ScoreManager.Initialize(totalScoreText);
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = contactSound;
+        rb = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
@@ -30,10 +34,12 @@ public class WingTest : MonoBehaviour
 
     void Update()
     {
-        float movementDistance = movementSpeed * Time.deltaTime;
+        //float movementDistance = movementSpeed * Time.deltaTime;
 
         // Move the object in the negative x-direction
-        transform.Translate(Vector3.left * movementDistance);
+        //transform.Translate(Vector3.left * movementDistance);
+        rb.velocityX = -GameManager.Instance.speed;
+
     }
 
     void FixedUpdate()

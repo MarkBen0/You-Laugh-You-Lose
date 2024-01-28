@@ -10,21 +10,27 @@ public class ComicBook : MonoBehaviour
     public int scoreValue = 10;
     public TextMeshProUGUI totalScoreText;
     public float movementSpeed = 2f;
+    private Rigidbody2D rb;
+
     private void Start()
     {
 
         ScoreManager.Initialize(totalScoreText);
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = contactSound;
+        rb = GetComponent<Rigidbody2D>();
+
     }
     public TextMeshProUGUI scoreText;
     private int score = 0;
     void Update()
     {
-        float movementDistance = movementSpeed * Time.deltaTime;
+        //float movementDistance = movementSpeed * Time.deltaTime;
 
         // Move the object in the negative x-direction
-        transform.Translate(Vector3.left * movementDistance);
+        //transform.Translate(Vector3.left * movementDistance);
+        rb.velocityX = -GameManager.Instance.speed;
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
