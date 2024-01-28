@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4822e0e2bdf0f47328ce358383dafd10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  contactSound: {fileID: 0}
   movementSpeed: 200
   scoreValue: -10
   totalScoreText: {fileID: 868503207}
@@ -668,6 +669,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 8
+  tripDuration: 4
+  tripRotationSpeed: 360
 --- !u!1 &1092024065
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,6 +1625,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 868503207}
     - target: {fileID: 3583797658275523790, guid: ececa9aaa5efc7e43b4bb431fa5eb45c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3583797658275523790, guid: ececa9aaa5efc7e43b4bb431fa5eb45c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3583797658275523790, guid: ececa9aaa5efc7e43b4bb431fa5eb45c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.63
       objectReference: {fileID: 0}
@@ -1661,6 +1672,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5827663820026111049, guid: ececa9aaa5efc7e43b4bb431fa5eb45c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3558332379023649899, guid: b87264b2ee361460aa872c246d9ac75a, type: 3}
     - target: {fileID: 8504162750405124474, guid: ececa9aaa5efc7e43b4bb431fa5eb45c, type: 3}
       propertyPath: m_Name
       value: Comic
