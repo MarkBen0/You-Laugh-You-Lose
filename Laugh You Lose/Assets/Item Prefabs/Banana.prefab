@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4387901634612883093}
   m_Layer: 0
   m_Name: Banana
-  m_TagString: obstacle
+  m_TagString: Bad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d47ab8a1e60f444eab99e9b6d549211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  contactSound: {fileID: 8300000, guid: 4e0fbc2dd9b1a411a937354a5388f55d, type: 3}
   scoreValue: -10
   totalScoreText: {fileID: 0}
   scoreText: {fileID: 0}
@@ -191,7 +192,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 4e0fbc2dd9b1a411a937354a5388f55d, type: 3}
   m_Resource: {fileID: 8300000, guid: 4e0fbc2dd9b1a411a937354a5388f55d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.34
   m_Pitch: 1
   Loop: 0
   Mute: 0

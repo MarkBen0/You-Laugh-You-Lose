@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 3846362867908547155}
   m_Layer: 0
   m_Name: 9-Sliced 1
-  m_TagString: Untagged
+  m_TagString: Good
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,7 +150,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5456560464640333135}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -168,7 +168,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 2
 --- !u!114 &7869731888372061786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
   scoreValue: 10
   rotationSpeed: 10
   scoreText: {fileID: 0}
-  movementSpeed: 1
+  movementSpeed: 2
 --- !u!222 &2354536249652315452
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -231,7 +231,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: dbf81a24246ce4855a40e5f1d3449e30, type: 3}
   m_Resource: {fileID: 8300000, guid: dbf81a24246ce4855a40e5f1d3449e30, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.53
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -5,12 +5,16 @@ using TMPro;
 
 public class Testing : MonoBehaviour
 {
+    public AudioClip contactSound; // Assign your sound clip in the Inspector
+    private AudioSource audioSource;
     public int scoreValue = -10;
     public TextMeshProUGUI totalScoreText;
     private Rigidbody2D rb;
     //public float movementSpeed = 2f;
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = contactSound;
         ScoreManager.Initialize(totalScoreText);
         rb = GetComponent<Rigidbody2D>();
     }
@@ -29,11 +33,19 @@ public class Testing : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Collect();
+            PlayContactSound();
+                Collect();
             Debug.Log("collected");
         }
     }
 
+    void PlayContactSound()
+    {
+        if (audioSource != null && contactSound != null)
+        {
+            audioSource.PlayOneShot(contactSound);
+        }
+    }
     void Collect()
     {
         Renderer renderer = GetComponent<Renderer>();

@@ -895,7 +895,7 @@ GameObject:
   - component: {fileID: 526990587}
   m_Layer: 0
   m_Name: Feather Spawner
-  m_TagString: Untagged
+  m_TagString: Good
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -913,8 +913,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 5456560464640333135, guid: d90dd303bf4054ace9f92f724e678199, type: 3}
-  _minimumSpawnTime: 0.5
-  _maximumSpawnTime: 2
+  _minimumSpawnTime: 4
+  _maximumSpawnTime: 10
 --- !u!4 &526990588
 Transform:
   m_ObjectHideFlags: 0
@@ -924,7 +924,7 @@ Transform:
   m_GameObject: {fileID: 526990586}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.09, y: 1.58, z: 0}
+  m_LocalPosition: {x: 11.09, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1078,7 +1078,7 @@ GameObject:
   - component: {fileID: 840021427}
   m_Layer: 0
   m_Name: Comic Spawner
-  m_TagString: Untagged
+  m_TagString: Good
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1097,7 +1097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 8504162750405124474, guid: ececa9aaa5efc7e43b4bb431fa5eb45c, type: 3}
   _minimumSpawnTime: 0.5
-  _maximumSpawnTime: 2
+  _maximumSpawnTime: 3
 --- !u!4 &840021428
 Transform:
   m_ObjectHideFlags: 0
@@ -1125,7 +1125,7 @@ GameObject:
   - component: {fileID: 1051829184}
   m_Layer: 0
   m_Name: Banana Spawner
-  m_TagString: Untagged
+  m_TagString: Bad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1191,7 +1191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 6960281435303483570, guid: 810add3f4c2724eb39d29fd4236699a7, type: 3}
   _minimumSpawnTime: 0.5
-  _maximumSpawnTime: 2
+  _maximumSpawnTime: 6
 --- !u!4 &1303761615
 Transform:
   m_ObjectHideFlags: 0
@@ -1201,7 +1201,7 @@ Transform:
   m_GameObject: {fileID: 1303761613}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.09, y: -3.5, z: 0}
+  m_LocalPosition: {x: 11.09, y: -2.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -30,7 +30,7 @@ public class WingTest : MonoBehaviour
 
     private int score = 0;
 
-    public float movementSpeed = 1f;
+    public float movementSpeed = 2f;
 
     void Update()
     {
